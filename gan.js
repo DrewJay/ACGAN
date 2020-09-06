@@ -481,7 +481,6 @@ async function run() {
 				args.latentSize, generator, discriminator
 			);
 
-
 			// For the reasons mentioned above, combined model will use double-sized batch too.
 			const gLoss = await trainCombinedModelOneStep(2 * actualBatchSize, args.latentSize, combined);
 
