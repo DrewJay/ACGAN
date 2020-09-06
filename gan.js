@@ -507,7 +507,7 @@ async function run() {
 					`Leaked ${tf.memory().numTensors - numTensors} tensors`,
 				);
 			}
-    	}
+        }
 
 		// Save the newly trained generator after each epoch.
 		await generator.save(saveURL);
