@@ -86,7 +86,8 @@ function buildGenerator(latentSize) {
     }).apply(imageClass);
 
     // Now we need to create correlation between original generated latent space
-    // and the one that is being trained from embedding layer.
+    // and the one that is being trained from embedding layer. Hadamard product
+    // "mixes" the noise with embedding vector and uses it as a seed of randomness.
     const h = tf.layers.multiply().apply([latent, classEmbedding]);
 
     // Feed the correlated latent space into our upscaling CNN.
