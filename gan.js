@@ -320,7 +320,7 @@ async function trainCombinedModelOneStep(batchSize, latentSize, combined) {
     });
 
     // Train combined model one step.
-	const losses = await combined.trainOnBatch([noise, sampledLabels], [fakeTrick, sampledLabels]);
+    const losses = await combined.trainOnBatch([noise, sampledLabels], [fakeTrick, sampledLabels]);
     tf.dispose([noise, sampledLabels, fakeTrick]);
 
     // Return generator losses.
