@@ -170,14 +170,14 @@ function buildDiscriminator() {
     }).apply(features);
 
     // Softmax is used for multiclass classifications. Here we are determining
-    // which numeric class the image belongs to (0-9).
+    // probabilities of source value belonging to every possible class.
     const aux = tf.layers.dense({
         units: NUM_CLASSES,
         activation: 'softmax',
     }).apply(features);
 
     // Return the model itself. Input is the image and output both
-    // realness score (realness class) and auxilliary score (number class).
+    // realness score (realness class) and auxilliary probabilites.
     return tf.model({ inputs: image, outputs: [realnessScore, aux] });
 }
 
