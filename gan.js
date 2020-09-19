@@ -8,7 +8,7 @@ const data = require('./data');
 
 const NUM_CLASSES = 10;
 const IMAGE_SIZE = 28;
-const SOFT_ONE = tf.scalar(0.95);
+const SOFT_ONE = 0.95;
 
 /**
  * First part of composite sequetial neural network. Generator takes random noise
