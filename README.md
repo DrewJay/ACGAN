@@ -1,3 +1,5 @@
+<img src="https://i.postimg.cc/fTWtcmj2/tools.png" width="300">
+
 # General Purpose Auxiliary Generative Adversarial Neural Network
 Is implementation of generative neural network. Current state of the neural network excels at learning characteristics of MNIST format images and generating random variations of them. It utilizes discrete data vectorization in order to convert classes into pixels.
 ## Good reads
