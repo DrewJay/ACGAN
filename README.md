@@ -2,6 +2,8 @@
 
 # Vectorr
 Is implementation of "general purpose auxiliary generative adversarial neural network" (ACGANN). Current state of the neural network excels at learning characteristics of MNIST format images and generating random variations of them. It utilizes discrete data vectorization in order to convert classes into pixels.
+## Credits
+File core.js that contains primary ACGANN implementations is heavily based on work of <a href="https://github.com/tensorflow/tfjs-examples/tree/master/mnist-acgan">Google</a>. My implementation includes refactored and prettyfied code and highly descriptive documentation.
 ## Good reads
 Folder good reads contains relevant scientific papers dedicated to the topic of GANNs and ACGANNs.
 ## Installation
