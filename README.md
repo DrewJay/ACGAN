@@ -15,6 +15,8 @@ It is *very* complicated to install this thing properly. It is strongly recommen
 
 Node.js: `v10.16.3`
 
+(optional) ts-node: `v9.0.0`
+
 @tensorflow/tfjs: `v1.2.11`
 
 @tensorflow/tfjs-node: `v1.2.9`
@@ -30,7 +32,7 @@ To run this application on GPU, one needs to do all the steps above plus the one
 
 You will first need to enable CUDA computing on your graphics card. You can achieve it by downloading cuDNN >= `7.4.1` from <a href="https://developer.nvidia.com/rdp/cudnn-download">here</a>.
 
-Then you will need to install CUDA toolkit v `10.0.0` <a href="https://developer.nvidia.com/cuda-downloads">from here</a>.
+Then you will need to install CUDA toolkit `v10.0.0` <a href="https://developer.nvidia.com/cuda-downloads">from here</a>.
 
 Finally, you will need to set environment variables into user path:
 
