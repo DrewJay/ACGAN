@@ -23,6 +23,7 @@ const constants = {
 	},
 };
 
+// Core system variables. Number of possible image classes and image dimensions.
 let NUM_CLASSES, IMAGE_SIZE;
 
 /**
