@@ -8,19 +8,19 @@ const data = require('./data/data');
 
 // System constants.
 const constants = {
-    SOFT_ONE: 0.95,
-    defaults: {
-        gpu: false,
-        epochs: 100,
-        batchSize: 100,
-        latentSpaceSize: 100,
-        learningRate: 0.0002,
-        adamBeta: 0.5,
-        generatorSavePath: './log',
-        logDir: './dist/generator',
-        classes: 10,
-        squareDim: 28,
-    },
+	SOFT_ONE: 0.95,
+	defaults: {
+		gpu: false,
+		epochs: 100,
+		batchSize: 100,
+		latentSpaceSize: 100,
+		learningRate: 0.0002,
+		adamBeta: 0.5,
+		generatorSavePath: './log',
+		logDir: './dist/generator',
+		classes: 10,
+		squareDim: 28,
+	},
 };
 
 let NUM_CLASSES, IMAGE_SIZE;
@@ -348,7 +348,7 @@ async function trainCombinedModelOneStep(batchSize, latentSpaceSize, combined) {
  * @returns Parsed command line arguments.
  */
 function parseArguments() {
-    const parser = new argparse.ArgumentParser();
+	const parser = new argparse.ArgumentParser();
 
 	parser.addArgument('--gpu',
 		{ action: 'storeTrue', help: 'Use tfjs-node-gpu for training (required CUDA GPU).' }
@@ -407,22 +407,22 @@ function makeMetadata(totalEpochs, currentEpoch, completed) {
  * Run the whole bad boi ova here.
  */
 async function run() {
-    const args = parseArguments();
+	const args = parseArguments();
 
-    // Set image size and number of classes first.
-    NUM_CLASSES = args.classes;
-    IMAGE_SIZE = args.squareDim;
+	// Set image size and number of classes first.
+	NUM_CLASSES = args.classes;
+	IMAGE_SIZE = args.squareDim;
 
-    // Log current application setup on launch.
-    console.log('\n-----Runtime configuration-----')
-    for (let key of Object.keys(args)) {
-        console.log(`${key}: ${args[key]}`);
-    }
-    console.log('-------------------------------\n');
+	// Log current application setup on launch.
+	console.log('\n-----Runtime configuration-----')
+	for (let key of Object.keys(args)) {
+		console.log(`${key}: ${args[key]}`);
+	}
+	console.log('-------------------------------\n');
 
-    if (NUM_CLASSES === args.classes && IMAGE_SIZE === args.squareDim) {
-        console.log(`Arguments propagated into system variables correctly ✓`);
-    }
+	if (NUM_CLASSES === args.classes && IMAGE_SIZE === args.squareDim) {
+		console.log(`Arguments propagated into system variables correctly ✓`);
+	}
 
 	// GPU acceleration is supported only by graphics cards with CUDA cores.
 	if (args.gpu) {
