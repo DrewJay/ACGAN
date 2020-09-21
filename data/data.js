@@ -77,7 +77,7 @@ function loadHeaderValues(buffer, headerLength) {
  * Load images from g-zipped dataset.
  *
  * @param fileName - File name of g-zipped dataset.
- * @returns Array of image data.
+ * @returns 2d array of images data.
  */
 async function loadImages(fileName) {
 	const buffer = await fetchAndSaveTrainingData(fileName);
@@ -107,7 +107,7 @@ async function loadImages(fileName) {
  * Load labels from g-zipped dataset.
  *
  * @param fileName - File name of g-zipped dataset.
- * @returns Array of labels data.
+ * @returns 2d array of labels data.
  */
 async function loadLabels(fileName) {
 	const buffer = await fetchAndSaveTrainingData(fileName);
