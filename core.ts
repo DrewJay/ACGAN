@@ -30,7 +30,9 @@ let numberOfClasses, imageSize;
  * First part of composite sequetial neural network. Generator takes random noise
  * as an input and using convolutional layers, it reshapes the noise into 28x28 MNIST
  * format image. Generator learns to create better results using the embedding layer.
- * 
+ * Convolution in this model is basically inverse convolution (upsampling images instead
+ * of downsampling) and it is often called "deconvolution".
+ *
  * @param latentSpaceSize - The size of "latent space" vectors - or the noise.
  * @returns Tensorflow generator model.
  */
@@ -121,7 +123,7 @@ function buildGenerator(latentSpaceSize) {
  * Discriminator needs to be taught continually, as generator teaches to generate
  * better fakes, since the better looking fakes are still not real and discriminator
  * needs to be able to detect that.
- * 
+ *
  * @returns Tensorflow discriminator model.
  */
 function buildDiscriminator() {
