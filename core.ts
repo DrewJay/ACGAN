@@ -469,6 +469,7 @@ async function run() {
 	// Load and prepare MNIST training data.
 	await data.loadData();
 	let { images: xTrain, labels: yTrain } = data.getTrainData();
+	// This converts one hot encoded yTrain into [null, 1] sized array of actual labels.
 	yTrain = tf.expandDims(yTrain.argMax(-1), -1);
 
 	// Save the generator model once before starting the training.
