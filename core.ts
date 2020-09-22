@@ -565,9 +565,9 @@ if (require.main === module) {
 }
 
 module.exports = {
-  buildCombinedModel,
-  buildDiscriminator,
-  buildGenerator,
-  trainCombinedModelOneStep,
-  trainDiscriminatorOneStep
+	buildCombinedModel,
+	buildDiscriminator,
+	buildGenerator,
+	trainCombinedModelOneStep,
+	trainDiscriminatorOneStep,
 };
