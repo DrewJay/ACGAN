@@ -52,9 +52,9 @@ function buildGenerator(latentSpaceSize) {
     // of previous layer.
     cnn.add(tf.layers.reshape({targetShape: [3, 3, 384]}));
 
-    // When kernel of size 5 moves over [3, 3, ] matrix with 1 stride and valid padding,
-    // it creates [7, 7, ] matrix. Valid padding means whole [3, 3, ] matrix has to fully
-    // fit into moving kernel.
+    // When kernel of size 5 moves over [3, 3, 384] matrix with 1 stride and valid padding,
+    // it creates [7, 7, 384] matrix. Valid padding means whole [3, 3, null] matrix has to fully
+    // fit into moving kernel. Filters amount defines the last dimension so it is [7, 7, 192].
     cnn.add(tf.layers.conv2dTranspose({
         filters: 192,
         kernelSize: 5,
@@ -67,6 +67,7 @@ function buildGenerator(latentSpaceSize) {
 
     // Same padding with stride equal to 2 is basically dimension multiplication.
     // So 2 * 7 = 14. Same padding means center of the kernel moving over matrix.
+    // Output shape here is [14, 14, 96].
     // https://stackoverflow.com/questions/37674306/what-is-the-difference-between-same-and-valid-padding-in-tf-nn-max-pool-of-t
     cnn.add(tf.layers.conv2dTranspose({
         filters: 96,
@@ -78,7 +79,7 @@ function buildGenerator(latentSpaceSize) {
     }));
     cnn.add(tf.layers.batchNormalization());
 
-    // Same as before, stride 2 means doubling the dimensions. This leaves us with [28, 28, ] dimensions.
+    // Same as before, stride 2 means doubling the dimensions. This leaves us with [28, 28, 1] dimensions.
     cnn.add(tf.layers.conv2dTranspose({
         filters: 1,
         kernelSize: 5,
