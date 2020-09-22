@@ -183,6 +183,7 @@ class DatasetStager {
 	 * Primary data retrieval method.
 	 *
 	 * @param isTrainingData - Training or testing data flag.
+	 * @returns Object containing images data and labels data.
 	 */
 	getData(isTrainingData) {
 		const imagesIndex = (isTrainingData) ? 0 : 2;
