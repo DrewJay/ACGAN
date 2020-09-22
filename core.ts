@@ -78,7 +78,7 @@ function buildGenerator(latentSpaceSize) {
     }));
     cnn.add(tf.layers.batchNormalization());
 
-    // Same as before, stride 2 means doubling the dimensions.
+    // Same as before, stride 2 means doubling the dimensions. This leaves us with [28, 28, ] dimensions.
     cnn.add(tf.layers.conv2dTranspose({
         filters: 1,
         kernelSize: 5,
