@@ -46,4 +46,4 @@ Finally, you will need to set environment variables into user path:
 
 This should get you covered and training should now be possible on gpu by running `node core.js --gpu`.
 ## Run the training
-Using `node core.js` or `node core.js --gpu` if your graphics card supports CUDA computing.
+Using `node core.ts` or `node core.ts --gpu` if your graphics card supports CUDA computing.
