@@ -44,6 +44,6 @@ Finally, you will need to set environment variables into user path:
 | C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\extras\CUPTI\libx64 |
 | C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\include |
 
-This should get you covered and training should now be possible on gpu by running `node core.js --gpu`.
+This should get you covered and training should now be possible on gpu by running `node core.ts --gpu`.
 ## Run the training
 Using `node core.ts` or `node core.ts --gpu` if your graphics card supports CUDA computing.
