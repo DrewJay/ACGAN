@@ -1,4 +1,4 @@
-let tf = require('@tensorflow/tfjs');
+let tf;
 
 const fs = require('fs');
 const path = require('path');
