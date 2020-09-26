@@ -464,7 +464,10 @@ async function run() {
 	// Build the already precompiled combined model.
 	const optimizer = tf.train.adam(args.learningRate, args.adamBeta);
 	const combined = buildCombinedModel(
-		args.latentSpaceSize, generator, discriminator, optimizer,
+		args.latentSpaceSize,
+		generator,
+		discriminator,
+		optimizer,
 	);
 
 	// Load and prepare MNIST training data.
@@ -511,17 +514,27 @@ async function run() {
 			// that's why discriminator optimizer processes double-sized batch at given
 			// time.
 			const dLoss = await trainDiscriminatorOneStep(
-				xTrain, yTrain, batch * args.batchSize, actualBatchSize,
-				args.latentSpaceSize, generator, discriminator
+				xTrain,
+				yTrain,
+				batch * args.batchSize,
+				actualBatchSize,
+				args.latentSpaceSize,
+				generator,
+				discriminator,
 			);
 
 			// For the reasons mentioned above, combined model will use double-sized batch too.
-			const gLoss = await trainCombinedModelOneStep(2 * actualBatchSize, args.latentSpaceSize, combined);
+			const gLoss = await trainCombinedModelOneStep(
+				2 * actualBatchSize,
+				args.latentSpaceSize,
+				combined,
+			);
 
 			// Show information about epochs and current loss levels.
 			console.log(
 				`epoch ${epoch + 1} / ${args.epochs}, batch ${batch + 1} / ${numBatches}: ` +
-				`dLoss = ${dLoss[0].toFixed(6)}, gLoss = ${gLoss[0].toFixed(6)}.`);
+				`dLoss = ${dLoss[0].toFixed(6)}, gLoss = ${gLoss[0].toFixed(6)}.`,
+			);
 
 			// Generate tensorboard logs.
 			if (logWriter != null) {
