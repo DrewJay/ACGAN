@@ -90,12 +90,11 @@ async function loadImages(fileName) {
 	let index = headerBytes;
 
 	while (index < buffer.byteLength) {
-    	const array = new Float32Array(recordBytes);
-
+    		const array = new Float32Array(recordBytes);
 		for (let i = 0; i < recordBytes; i++) {
 			// Normalize the pixel values into the 0-1 interval, from the original [-1, 1] interval.
-      		array[i] = (buffer.readUInt8(index++) - 127.5) / 127.5;
-    	}
+      			array[i] = (buffer.readUInt8(index++) - 127.5) / 127.5;
+    		}
 		images.push(array);
   	}
 
