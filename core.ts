@@ -333,7 +333,7 @@ async function trainCombinedModelOneStep(batchSize, latentSpaceSize, combined) {
         // with fake realness scores, we would teach generator to generate fake images.
         // Since we want to teach it to generate real images, we need to set target
         // fakeness score to 1. In early training stages convolutions in discriminator
-        // will detect that it's very far from being real, this it will generate large
+        // will detect that it's very far from being real, thus it will generate large
         // cross-entropy loss quantities and will make generator learn fast to generate
         // more real images. Embedding layer in generator is the one being taught.
         const fakeTrick = tf.tidy(() => tf.ones([batchSize, 1]).mul(constants.softOne));
