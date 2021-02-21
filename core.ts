@@ -325,7 +325,7 @@ async function trainCombinedModelOneStep(batchSize, latentSpaceSize, combined) {
     const [noise, sampledLabels, fakeTrick] = tf.tidy(() => {
         // Again, generate latent vectors.
         const zVectors = tf.randomUniform([batchSize, latentSpaceSize], -1, 1);
-        // Generate label for every latent space.
+        // Generate label for every latent vector.
         const sampledLabels = tf.randomUniform([batchSize, 1], 0, numberOfClasses, 'int32').asType('float32');
 
         // This is the most important part in GAN training. During the combined model
