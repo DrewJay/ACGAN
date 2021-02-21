@@ -274,7 +274,7 @@ async function trainDiscriminatorOneStep(
         
         // Here we generate the "latent space". It is the fake counterside of imageBatch.
         let zVectors = tf.randomUniform([batchSize, latentSpaceSize], -1, 1);
-        // Generate numeric class for each latent space created before.
+        // Generate numeric class for each latent vector created before.
         let sampledLabels = tf.randomUniform([batchSize, 1], 0, numberOfClasses, 'int32').asType('float32');
 
         // Generate image using generator.
